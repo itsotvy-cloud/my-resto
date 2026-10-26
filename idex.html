@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my resto</title>
+  <style>
+    body{
+      background: #1D3557;
+      margin:0;
+      
+    }
+    header{
+      background-color: #255eaf;
+      padding: 15px;
+      
+    }
+    
+    .kartu{
+      background-color: #255eaf;
+      padding:20px;
+      margin:12px;
+      text-align: center;
+      border-radius:12px;
+      box-shadow:5px 10px 8px rgba(0,0,0,0.2) ;
+      
+    }
+    h1{
+      color: white;
+      font-family: sans-serif;
+    }
+    .kartu h1{
+      color:white;
+    }
+    p{
+      text-align: center;
+      color:white;
+    }
+    a{
+      display: inline-block;
+      background-color:#255eaf;
+      font-family: Arial;
+      margin: 20px;
+      padding: 12px 25px;
+      border-radius:5px;
+      text-decoration: none;
+      color:white;
+      box-shadow:5px 10px 8px rgba(0,0,0,0.2)   
+    }
+
+    .daftar-menu {
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)) ;
+  gap: 15px;
+  padding: 12px;
+}
+
+.kartu img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 5px 10px 8px rgba(0,0,0,0.2)
+}
+
+.kartu button {
+  background: #1D3557;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+    h1{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Resto</h1>
+  </header>
+  <main>
+    <h1>menu</h1>
+    <p>total pesanan: <span id="total">0</span></p>
+    <p>total harga: <span id="harga">Rp0</span></p>
+    <div class="daftar-menu">
+      <div class="kartu">
+        <img src="nasgor.jpeg" alt="nasi goreng">
+        <h2>NASI GORENG</h2>
+        <P>Rp10.000</P>
+        <button onclick="tambahPesanan(10000)">tambah</button>
+      </div>
+      
+      <div class="kartu">
+        <img src="mieayam.jpeg" alt="mie ayam">
+        <h2>mie ayam</h2>
+        <P>Rp15.000</P>
+        <button onclick="tambahPesanan(15000)">tambah</button>
+      </div>
+      
+      <div class="kartu">
+        <img src="bakso.jpeg" alt="bakso">
+        <h2>bakso</h2>
+        <P>15.000</P>
+        <button onclick="tambahPesanan(15000)">tambah</button>
+      </div>
+    </div>
+  </main>
+  
+  <script>
+  let total = 0;
+  let totalHarga = 0;
+
+  function tambahPesanan(hargaMenu) {
+    total = total + 1;
+    totalHarga = totalHarga + hargaMenu;
+
+    document.getElementById("total").innerText = total;
+
+    document.getElementById("harga").innerText =
+      "Rp" + totalHarga.toLocaleString("id-ID");
+  }
+ </script>
+</body>
+</html>
